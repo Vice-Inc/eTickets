@@ -21,7 +21,7 @@ namespace eTickets.Controllers
         {
             var data = await context.Producers.ToListAsync();
 
-            return View();
+            return View(data);
         }
     }
 }
