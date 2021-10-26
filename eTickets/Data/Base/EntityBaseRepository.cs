@@ -37,7 +37,7 @@ namespace eTickets.Data.Base
             EntityEntry entityEntry = context.Entry<T>(newEntity);
             entityEntry.State = EntityState.Modified;
             //context.Update(newEntity);
-            //await context.SaveChangesAsync();
+            await context.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(int id)
@@ -45,9 +45,8 @@ namespace eTickets.Data.Base
             T entity = await GetByIdAsync(id);
             EntityEntry entityEntry = context.Entry<T>(entity);
             entityEntry.State = EntityState.Deleted;
-            //T entity = await GetByIdAsync(id);
             //context.Set<T>().Remove(entity);
-            //await context.SaveChangesAsync();
+            await context.SaveChangesAsync();
         }
     }
 }

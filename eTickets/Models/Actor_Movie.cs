@@ -1,11 +1,12 @@
-﻿using System;
+﻿using eTickets.Data.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace eTickets.Models
 {
-    public class Actor_Movie
+    public class Actor_Movie : IEntityBase
     {
         public int id { get; set; }
         //Relationships
