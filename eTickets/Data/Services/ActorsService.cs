@@ -25,7 +25,7 @@ namespace eTickets.Data.Services
 
         public async Task DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            await context.SaveChangesAsync();
         }
 
         async Task<IEnumerable<Actor>> IActorsService.GetAllAsync()
@@ -40,7 +40,8 @@ namespace eTickets.Data.Services
 
         public async Task UpdateAsync(int id, Actor newActor)
         {
-            throw new NotImplementedException();
+            context.Update(newActor);
+            await context.SaveChangesAsync();
         }
     }
 }
