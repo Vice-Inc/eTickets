@@ -32,7 +32,10 @@ namespace eTickets
             services.AddDbContext<AppDbContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnectionString")));
 
             services.AddScoped<IActorsService, ActorsService>();
-            
+            services.AddScoped<IProducersService, ProducersService>();
+            services.AddScoped<IMoviesService, MoviesService>();
+            services.AddScoped<ICinemasService, CinemasService>();
+
             services.AddControllersWithViews();
         }
 
