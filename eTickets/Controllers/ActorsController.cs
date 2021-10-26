@@ -1,4 +1,6 @@
 ﻿using eTickets.Data;
+using eTickets.Data.Interfaces;
+using eTickets.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,18 +12,36 @@ namespace eTickets.Controllers
 {
     public class ActorsController : Controller
     {
-        private readonly AppDbContext context;
+        private readonly IActorsService actorsService;
 
-        public ActorsController(AppDbContext dbContext)
+        public ActorsController(IActorsService actorsService)
         {
-            context = dbContext;
+            this.actorsService = actorsService;
         }
 
         public async Task<IActionResult> Index()
         {
-            var data = await context.Actors.ToListAsync();
+            var data = await actorsService.GetAll();
 
             return View(data);
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create([Bind("ProfilePictureURL,FullName,Bio")]Actor actor)
+        {
+            if(!ModelState.IsValid)
+            {
+                return View(actor);
+            }
+
+            actorsService.Add(actor);
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }
