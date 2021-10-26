@@ -50,3 +50,4 @@ C:\Users\Xiaomi\Documents\C#\eTickets\eTickets\obj\Debug\net5.0\Razor\Views\Cine
 C:\Users\Xiaomi\Documents\C#\eTickets\eTickets\obj\Debug\net5.0\Razor\Views\Movies\Index.cshtml.g.cs
 C:\Users\Xiaomi\Documents\C#\eTickets\eTickets\obj\Debug\net5.0\Razor\Views\Producers\Index.cshtml.g.cs
 C:\Users\Xiaomi\Documents\C#\eTickets\eTickets\obj\Debug\net5.0\Razor\Views\Actors\Create.cshtml.g.cs
+C:\Users\Xiaomi\Documents\C#\eTickets\eTickets\obj\Debug\net5.0\Razor\Views\Actors\Details.cshtml.g.cs
