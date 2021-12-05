@@ -352,7 +352,7 @@ namespace eTickets.Data
                         Email = adminUserEmail,
                         EmailConfirmed = true
                     };
-                    await userManager.CreateAsync(newAdminUser, "vice");
+                    var res = await userManager.CreateAsync(newAdminUser, "vicePassword-1");
                     await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
                 }
 
@@ -369,7 +369,7 @@ namespace eTickets.Data
                         Email = appUserEmail,
                         EmailConfirmed = true
                     };
-                    await userManager.CreateAsync(newAppUser, "user");
+                    var res = await userManager.CreateAsync(newAppUser, "userPassword-1");
                     await userManager.AddToRoleAsync(newAppUser, UserRoles.User);
                 }
             }
